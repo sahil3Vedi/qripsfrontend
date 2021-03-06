@@ -1,0 +1,14 @@
+.navbar-top{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    font-size: 30px;
+    padding: 12px 20px 0px 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+    color: #1E0422;
+}
+
+.navbar-logo{
+    width: 114px;
+    margin-left: 50%;
+    transform: translate(-57px,-5px);
+}
