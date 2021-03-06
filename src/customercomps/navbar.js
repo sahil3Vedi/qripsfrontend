@@ -67,46 +67,46 @@ class Navbar extends Component{
                         <Menu onClick={this.handleMenuClick} style={{ width: 256 }} selectedKeys={[this.state.currentLHS]} mode="inline">
                             <Menu.Item key="sub1" onClick={this.toggleLHS}><Link to="/home">Home</Link></Menu.Item>
                             <SubMenu key="sub2" title="CBD" onClick={this.toggleLHS}>
-                                <Menu.Item key="1">Option 1</Menu.Item>
-                                <Menu.Item key="2">Option 2</Menu.Item>
-                                <Menu.Item key="3">Option 3</Menu.Item>
-                                <Menu.Item key="4">Option 4</Menu.Item>
+                                <Menu.Item key="1">Oil</Menu.Item>
+                                <Menu.Item key="2">Gummies</Menu.Item>
+                                <Menu.Item key="3">Capsules</Menu.Item>
+                                <Menu.Item key="4">Balms</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub3" title="Bongs" onClick={this.toggleLHS}>
-                                <Menu.Item key="5">Option 9</Menu.Item>
-                                <Menu.Item key="6">Option 10</Menu.Item>
-                                <Menu.Item key="7">Option 11</Menu.Item>
-                                <Menu.Item key="8">Option 12</Menu.Item>
+                                <Menu.Item key="5">Glass</Menu.Item>
+                                <Menu.Item key="6">Acyllic</Menu.Item>
+                                <Menu.Item key="7">Silicone</Menu.Item>
+                                <Menu.Item key="8">Ceramic</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub4" title="Pipes" onClick={this.toggleLHS}>
-                                <Menu.Item key="9">Option 9</Menu.Item>
-                                <Menu.Item key="10">Option 10</Menu.Item>
-                                <Menu.Item key="11">Option 11</Menu.Item>
-                                <Menu.Item key="12">Option 12</Menu.Item>
+                                <Menu.Item key="9">Wooden</Menu.Item>
+                                <Menu.Item key="10">Glass</Menu.Item>
+                                <Menu.Item key="11">Silicone</Menu.Item>
+                                <Menu.Item key="12">Ceramic</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub5" title="Papers" onClick={this.toggleLHS}>
-                                <Menu.Item key="13">Option 9</Menu.Item>
-                                <Menu.Item key="14">Option 10</Menu.Item>
-                                <Menu.Item key="15">Option 11</Menu.Item>
-                                <Menu.Item key="16">Option 12</Menu.Item>
+                                <Menu.Item key="13">Standard</Menu.Item>
+                                <Menu.Item key="14">Flavoured</Menu.Item>
+                                <Menu.Item key="15">Cones</Menu.Item>
+                                <Menu.Item key="16">Roaches</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub6" title="Grinders" onClick={this.toggleLHS}>
-                                <Menu.Item key="17">Option 9</Menu.Item>
-                                <Menu.Item key="18">Option 10</Menu.Item>
-                                <Menu.Item key="19">Option 11</Menu.Item>
-                                <Menu.Item key="20">Option 12</Menu.Item>
+                                <Menu.Item key="17">Metal</Menu.Item>
+                                <Menu.Item key="18">Wooden</Menu.Item>
+                                <Menu.Item key="19">Acryllic</Menu.Item>
+                                <Menu.Item key="20">Stone</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub7" title="Ash Trays" onClick={this.toggleLHS}>
-                                <Menu.Item key="21">Option 9</Menu.Item>
-                                <Menu.Item key="22">Option 10</Menu.Item>
-                                <Menu.Item key="23">Option 11</Menu.Item>
-                                <Menu.Item key="24">Option 12</Menu.Item>
+                                <Menu.Item key="21">Metal</Menu.Item>
+                                <Menu.Item key="22">Wooden</Menu.Item>
+                                <Menu.Item key="23">Glass</Menu.Item>
+                                <Menu.Item key="24">Ceramic</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub8" title="Accessories" onClick={this.toggleLHS}>
-                                <Menu.Item key="25">Option 9</Menu.Item>
-                                <Menu.Item key="26">Option 10</Menu.Item>
-                                <Menu.Item key="27">Option 11</Menu.Item>
-                                <Menu.Item key="28">Option 12</Menu.Item>
+                                <Menu.Item key="25">Lighters</Menu.Item>
+                                <Menu.Item key="26">Bowls</Menu.Item>
+                                <Menu.Item key="27">Boxes</Menu.Item>
+                                <Menu.Item key="28">Cleaning</Menu.Item>
                             </SubMenu>
                         </Menu>
                     </div>
