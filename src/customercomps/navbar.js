@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Drawer } from 'antd'
-import { MenuOutlined, ShoppingCartOutlined, ShoppingOutlined } from '@ant-design/icons'
+import { MenuOutlined, ShoppingOutlined } from '@ant-design/icons'
 import './navbar.css'
 
 class Navbar extends Component{
