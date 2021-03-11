@@ -6,6 +6,7 @@ import Checkout from './payments/checkout'
 import NotFound from './customer/notFound'
 import 'antd/dist/antd.css'
 import './App.css'
+require('dotenv/config');
 
 class App extends Component{
     render(){

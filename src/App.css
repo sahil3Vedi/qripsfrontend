@@ -1,0 +1,23 @@
+.ant-input{
+    border-radius: 10px;
+}
+
+.ant-input-password{
+    border-radius: 10px;
+}
+
+.ant-btn{
+    border-radius: 5px;
+}
+
+.ant-select-selector{
+    border-radius: 10px!important;
+}
+
+.ant-input-number{
+    border-radius: 10px!important;
+}
+
+.ant-modal-content, .ant-modal-header{
+    border-radius: 10px!important;
+}

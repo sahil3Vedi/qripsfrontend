@@ -1,0 +1,12 @@
+.warehouse-display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.warehouse-instance{
+    box-shadow: 5px 5px 10px #2f2f2f33;
+    border-radius: 10px;
+    padding: 20px;
+}

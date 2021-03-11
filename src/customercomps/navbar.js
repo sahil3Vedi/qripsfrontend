@@ -32,6 +32,8 @@ class Navbar extends Component{
     handleMenuClick = e => {
         this.setState({
             currentLHS: e.key,
+        },()=>{
+            this.toggleLHS()
         })
     };
 
@@ -65,49 +67,58 @@ class Navbar extends Component{
                     </div>
                     <div className="drawer-body">
                         <Menu onClick={this.handleMenuClick} style={{ width: 256 }} selectedKeys={[this.state.currentLHS]} mode="inline">
-                            <Menu.Item key="sub1" onClick={this.toggleLHS}><Link to="/home">Home</Link></Menu.Item>
-                            <SubMenu key="sub2" title="CBD" onClick={this.toggleLHS}>
+                            <Menu.Item key="sub1"><Link to="/home">Home</Link></Menu.Item>
+                            <SubMenu key="sub2" title="CBD">
                                 <Menu.Item key="1">Oil</Menu.Item>
                                 <Menu.Item key="2">Gummies</Menu.Item>
                                 <Menu.Item key="3">Capsules</Menu.Item>
                                 <Menu.Item key="4">Balms</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub3" title="Bongs" onClick={this.toggleLHS}>
+                            <SubMenu key="sub3" title="Bongs">
                                 <Menu.Item key="5">Glass</Menu.Item>
                                 <Menu.Item key="6">Acyllic</Menu.Item>
                                 <Menu.Item key="7">Silicone</Menu.Item>
                                 <Menu.Item key="8">Ceramic</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub4" title="Pipes" onClick={this.toggleLHS}>
+                            <SubMenu key="sub4" title="Pipes">
                                 <Menu.Item key="9">Wooden</Menu.Item>
                                 <Menu.Item key="10">Glass</Menu.Item>
                                 <Menu.Item key="11">Silicone</Menu.Item>
                                 <Menu.Item key="12">Ceramic</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub5" title="Papers" onClick={this.toggleLHS}>
+                            <SubMenu key="sub5" title="Papers">
                                 <Menu.Item key="13">Standard</Menu.Item>
                                 <Menu.Item key="14">Flavoured</Menu.Item>
                                 <Menu.Item key="15">Cones</Menu.Item>
                                 <Menu.Item key="16">Roaches</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub6" title="Grinders" onClick={this.toggleLHS}>
+                            <SubMenu key="sub6" title="Grinders">
                                 <Menu.Item key="17">Metal</Menu.Item>
                                 <Menu.Item key="18">Wooden</Menu.Item>
                                 <Menu.Item key="19">Acryllic</Menu.Item>
                                 <Menu.Item key="20">Stone</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub7" title="Ash Trays" onClick={this.toggleLHS}>
+                            <SubMenu key="sub7" title="Ash Trays">
                                 <Menu.Item key="21">Metal</Menu.Item>
                                 <Menu.Item key="22">Wooden</Menu.Item>
                                 <Menu.Item key="23">Glass</Menu.Item>
                                 <Menu.Item key="24">Ceramic</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub8" title="Accessories" onClick={this.toggleLHS}>
+                            <SubMenu key="sub8" title="Accessories">
                                 <Menu.Item key="25">Lighters</Menu.Item>
                                 <Menu.Item key="26">Bowls</Menu.Item>
                                 <Menu.Item key="27">Boxes</Menu.Item>
                                 <Menu.Item key="28">Cleaning</Menu.Item>
                             </SubMenu>
+                            <SubMenu key="sub9" title="Clothing">
+                                <Menu.Item key="29">Tops</Menu.Item>
+                                <Menu.Item key="30">Shorts</Menu.Item>
+                                <Menu.Item key="31">Drip</Menu.Item>
+                            </SubMenu>
+                            <Menu.Item key="sub10">About</Menu.Item>
+                            <Menu.Item key="sub11">Help</Menu.Item>
+                            <Menu.Item key="sub12">About</Menu.Item>
+                            <Menu.Item key="sub13">Legal</Menu.Item>
                         </Menu>
                     </div>
                 </Drawer>
