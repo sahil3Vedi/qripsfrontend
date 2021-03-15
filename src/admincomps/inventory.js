@@ -19,7 +19,8 @@ class Inventory extends Component{
             products_loading: true,
             product_modal_visible: false,
             product_adding: false,
-            productImageUploading: false
+            productImageUploading: false,
+            productImageList: [],
         }
     }
 
@@ -104,6 +105,27 @@ class Inventory extends Component{
         })
     }
 
+    updateFileList = (file) => {
+        let temp = this.state.productImageList
+        temp.push(file.name)
+        this.setState({
+            productImageList: temp
+        })
+    }
+
+    uploadFile = (file) => {
+        // const config = {headers:{'x-auth-token':localStorage.getItem('token')}}
+        // axios.post(`${process.env.REACT_APP_BACKEND}/files`,{file})
+        // .then(res=>{
+        //     console.log(res.data)
+        // })
+        console.log(file)
+    }
+
+    addProduct = (values:any) => {
+        console.log(values)
+    }
+
     render(){
         // Warehouse Rendering
         const warehouse_columns = [
@@ -163,38 +185,39 @@ class Inventory extends Component{
             </Form>
         </Modal>
         let warehouseSelectOptions = this.state.warehouses ? this.state.warehouses.map(x=><Option value={x.warehouse_name} key={x.warehouse_name}>{x.warehouse_name}</Option>) : []
-        const uploadButton = (
-            <div>
-                <Button loading={this.state.productImageUploading}>Upload</Button>
-            </div>
-        )
         // Product Rendering
-        function beforeUpload(file) {
-            const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-            if (!isJpgOrPng) {
-                message.error('You can only upload JPG/PNG file!');
-            }
-            const isLt2M = file.size / 1024 / 1024 < 2;
-            if (!isLt2M) {
-                message.error('Image must smaller than 2MB!');
-            }
-            if (isJpgOrPng && isLt2M){
-                const config = {headers:{'x-auth-token':localStorage.getItem('token')},file:file}
-                axios.post(`${process.env.REACT_APP_BACKEND}/files`,config)
-                .then(res=>{
-                    console.log(res.data)
-                })
-            }
-            return isJpgOrPng && isLt2M;
+        let product_image_upload_props = {
+            beforeUpload: file => {
+                //validating file type & size
+                const isPng = (file.type === 'image/png');
+                if (!isPng) message.error('You can only upload PNG file')
+                const isLt2M = file.size / 1024 / 1024 < 2;
+                if (!isLt2M) message.error('Image must smaller than 2MB!')
+                //uploading file
+                if (isPng && isLt2M) {
+                    const formData = new FormData()
+                    formData.append("file",file)
+                    formData.append("upload_preset","msiuxpoc")
+                    axios.post("https://api.cloudinary.com/v1_1/dxti6efrg/image/upload",formData)
+                    .then(res=>{
+                        console.log(res.data)
+                    })
+                    console.log(file)
+                }
+                return false;
+            },
+            multiple: false,
+            showUploadList: false,
+            accept:".png"
         }
         let product_modal = <Modal destroyOnClose title="Add Product" visible={this.state.product_modal_visible} footer={null} onCancel={this.toggleProductModal}>
             <Form name="add_product" onFinish={this.addProduct}>
                 <Form.Item name="name" rules={[{ required: true, message: 'Please enter Product Name' }]}>
                     <Input placeholder="Product Name"/>
                 </Form.Item>
-                <Form.Item name="img" rules={[{ required: true, message: 'Please upload Product Image' }]}>
-                    <Upload name="img" listType="picture-card" className="avatar-uploader" showUploadList={false} beforeUpload={beforeUpload}>
-                        {this.state.productImageUrl ? <img src={this.state.productimageUrl} alt="product_image" style={{ width: '100px' }} /> : uploadButton}
+                <Form.Item>
+                    <Upload {...product_image_upload_props}>
+                        <Button loading={this.state.productImageUploading}>Add Product Image</Button>
                     </Upload>
                 </Form.Item>
                 <Form.Item name="description" rules={[{ required: true, message: 'Please enter Product Description' }]}>
