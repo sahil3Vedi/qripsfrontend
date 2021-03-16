@@ -1,13 +1,7 @@
+/* INPUTS */
+
 .ant-input{
     border-radius: 10px;
-}
-
-.ant-input-password{
-    border-radius: 10px;
-}
-
-.ant-btn{
-    border-radius: 5px;
 }
 
 .ant-select-selector{
@@ -18,6 +12,79 @@
     border-radius: 10px!important;
 }
 
+
+.ant-input-password{
+    border-radius: 10px;
+}
+
+/* BUTTONS */
+
+.ant-btn{
+    border-radius: 5px;
+}
+
+
+/* MODALS */
+
 .ant-modal-content, .ant-modal-header{
     border-radius: 10px!important;
 }
+
+/* MENUS */
+
+.ant-menu-submenu-selected {
+    color: #3B993B !important;
+}
+
+.ant-menu-item-selected {
+    color: #3B993B !important;
+}
+
+.ant-menu-item-selected i{
+    color: #3B993B !important;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color:#dfffdf !important;
+}
+
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+    color: #3B993B !important;
+}
+
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover i{
+    color: #3B993B !important;
+}
+
+.ant-menu-submenu-arrow::before, .ant-menu-submenu-arrow::after{
+    color: #3B993B !important;
+}
+
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after{
+    border-right-color: #3B993B !important;
+}
+
+.ant-menu-item:hover, .ant-menu-item-active, .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+    color: #000000 !important;
+}
+
+/* SCROLLBARS */
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #dfdfdf transparent;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #dfdfdf;
+  }
