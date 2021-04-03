@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Customer from './customer/customer'
-import Admin from './admin/admin'
 import Checkout from './payments/checkout'
 import NotFound from './customer/notFound'
 import 'antd/dist/antd.css'
@@ -24,7 +23,6 @@ class App extends Component{
                     <Route path="/login" exact render={(props) => <Customer {...props} view="login"/>}/>
                     <Route path="/product" exact render={(props) => <Customer {...props} view="product"/>}/>
                     <Route path="/register" exact render={(props) => <Customer {...props} view="register"/>}/>
-                    <Route path="/admin" exact render={(props) => <Admin {...props}/>}/>
                     <Route path="/checkout" exact render={(props) => <Checkout {...props}/>}/>
                     <Route path="/" render={(props) => <NotFound {...props}/>}/>
                 </Switch>

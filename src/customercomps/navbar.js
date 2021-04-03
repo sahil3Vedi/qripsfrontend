@@ -30,6 +30,7 @@ class Navbar extends Component{
     }
 
     handleMenuClick = e => {
+        console.log("click",e)
         this.setState({
             currentLHS: e.key,
         },()=>{
@@ -69,56 +70,60 @@ class Navbar extends Component{
                         <Menu onClick={this.handleMenuClick} style={{ width: 256 }} selectedKeys={[this.state.currentLHS]} mode="inline">
                             <Menu.Item key="sub1"><Link to="/home">Home</Link></Menu.Item>
                             <SubMenu key="sub2" title="Plant Based Dairy">
-                                <Menu.Item key="1">Oil</Menu.Item>
-                                <Menu.Item key="2">Gummies</Menu.Item>
-                                <Menu.Item key="3">Capsules</Menu.Item>
-                                <Menu.Item key="4">Balms</Menu.Item>
+                                <Menu.Item key="1">Cheese</Menu.Item>
+                                <Menu.Item key="2">Milk</Menu.Item>
+                                <Menu.Item key="3">Butter</Menu.Item>
+                                <Menu.Item key="4">Tofu</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub3" title="Plant Based Meat">
-                                <Menu.Item key="5">Glass</Menu.Item>
-                                <Menu.Item key="6">Acyllic</Menu.Item>
-                                <Menu.Item key="7">Silicone</Menu.Item>
-                                <Menu.Item key="8">Ceramic</Menu.Item>
+                                <Menu.Item key="5">Frozen</Menu.Item>
+                                <Menu.Item key="6">Non Frozen</Menu.Item>
+                                <Menu.Item key="7">Poultry</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub4" title="Body Care">
-                                <Menu.Item key="9">Wooden</Menu.Item>
-                                <Menu.Item key="10">Glass</Menu.Item>
-                                <Menu.Item key="11">Silicone</Menu.Item>
-                                <Menu.Item key="12">Ceramic</Menu.Item>
+                                <Menu.Item key="8">Hair Care</Menu.Item>
+                                <Menu.Item key="9">Body Wash</Menu.Item>
+                                <Menu.Item key="10">Skin Care</Menu.Item>
+                                <Menu.Item key="11">Cosmetics</Menu.Item>
+                                <Menu.Item key="12">Perfumes</Menu.Item>
+                                <Menu.Item key="13">Hygiene</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub5" title="Nutrition">
-                                <Menu.Item key="13">Standard</Menu.Item>
-                                <Menu.Item key="14">Flavoured</Menu.Item>
-                                <Menu.Item key="15">Cones</Menu.Item>
-                                <Menu.Item key="16">Roaches</Menu.Item>
+                                <Menu.Item key="14">Bars</Menu.Item>
+                                <Menu.Item key="15">Protein Powder</Menu.Item>
+                                <Menu.Item key="16">Supplements</Menu.Item>
+                                <Menu.Item key="17">Seeds</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub6" title="Grocery">
-                                <Menu.Item key="17">Metal</Menu.Item>
-                                <Menu.Item key="18">Wooden</Menu.Item>
-                                <Menu.Item key="19">Acryllic</Menu.Item>
-                                <Menu.Item key="20">Stone</Menu.Item>
+                                <Menu.Item key="18">Tea</Menu.Item>
+                                <Menu.Item key="19">Coffee</Menu.Item>
+                                <Menu.Item key="20">Oil</Menu.Item>
+                                <Menu.Item key="21">Beverages</Menu.Item>
+                                <Menu.Item key="22">Sauces</Menu.Item>
+                                <Menu.Item key="23">Snacks</Menu.Item>
+                                <Menu.Item key="24">Dry Fruits</Menu.Item>
+                                <Menu.Item key="25">Sugar</Menu.Item>
+                                <Menu.Item key="26">Salt</Menu.Item>
+                                <Menu.Item key="27">Spices</Menu.Item>
+                                <Menu.Item key="28">Cereal</Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub7" title="Chocolates">
-                                <Menu.Item key="21">Metal</Menu.Item>
-                                <Menu.Item key="22">Wooden</Menu.Item>
-                                <Menu.Item key="23">Glass</Menu.Item>
-                                <Menu.Item key="24">Ceramic</Menu.Item>
+                                <Menu.Item key="29">Powder</Menu.Item>
+                                <Menu.Item key="30">Sugar Free</Menu.Item>
+                                <Menu.Item key="31">Bars</Menu.Item>
+                                <Menu.Item key="32">Spread</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub8" title="Accessories">
-                                <Menu.Item key="25">Lighters</Menu.Item>
-                                <Menu.Item key="26">Bowls</Menu.Item>
-                                <Menu.Item key="27">Boxes</Menu.Item>
-                                <Menu.Item key="28">Cleaning</Menu.Item>
+                            <SubMenu key="sub8" title="Bakery">
+                                <Menu.Item key="33">Cookies</Menu.Item>
+                                <Menu.Item key="34">Biscuits</Menu.Item>
+                                <Menu.Item key="35">Powder</Menu.Item>
+                                <Menu.Item key="36">Butter</Menu.Item>
+                                <Menu.Item key="37">Sugar</Menu.Item>
                             </SubMenu>
-                            <SubMenu key="sub9" title="Utilities">
-                                <Menu.Item key="29">Tops</Menu.Item>
-                                <Menu.Item key="30">Shorts</Menu.Item>
-                                <Menu.Item key="31">Drip</Menu.Item>
-                            </SubMenu>
-                            <Menu.Item key="sub10">About</Menu.Item>
-                            <Menu.Item key="sub11">Help</Menu.Item>
-                            <Menu.Item key="sub12">About</Menu.Item>
-                            <Menu.Item key="sub13">Legal</Menu.Item>
+                            <Menu.Item key="sub9">About</Menu.Item>
+                            <Menu.Item key="sub10">Help</Menu.Item>
+                            <Menu.Item key="sub11">About</Menu.Item>
+                            <Menu.Item key="sub12">Legal</Menu.Item>
                         </Menu>
                     </div>
                 </Drawer>
