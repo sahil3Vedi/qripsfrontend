@@ -75,16 +75,30 @@
     scrollbar-width: thin;
     scrollbar-color: #dfdfdf transparent;
   }
-  
+
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 10px;
   }
-  
+
   *::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   *::-webkit-scrollbar-thumb {
     background-color: #dfdfdf;
   }
+
+/*SPINNER*/
+
+.spinner {
+    margin: 20px 0;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.ant-spin-text{
+    color: green;
+}

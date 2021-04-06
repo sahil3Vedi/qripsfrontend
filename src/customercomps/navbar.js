@@ -13,8 +13,32 @@ class Navbar extends Component{
             LHSOpen: false,
             RHSOpen: false,
             currentLHS: "sub1",
-            openLHS: "sub1"
         }
+    }
+
+    componentDidMount(){
+        let currentLHS = "sub1"
+        switch(this.props.pathname.split('/')[1]){
+            case "home":
+                currentLHS = "sub1"
+                break
+            case "products":
+                currentLHS = this.props.pathname.split('/')[2]
+                break
+            case "help":
+                currentLHS = "sub9"
+                break
+            case "about":
+                currentLHS = "sub10"
+                break
+            case "legal":
+                currentLHS = "sub11"
+                break
+            default:
+                currentLHS = null
+                break
+        }
+        this.setState({currentLHS})
     }
 
     toggleRHS = () => {
@@ -30,20 +54,12 @@ class Navbar extends Component{
     }
 
     handleMenuClick = e => {
-        console.log("click",e)
         this.setState({
             currentLHS: e.key,
         },()=>{
             this.toggleLHS()
         })
     };
-
-    handleOpenLHS = e => {
-        console.log("click",e)
-        this.setState({
-            openLHS: e.key
-        })
-    }
 
     render(){
         return (
@@ -70,10 +86,10 @@ class Navbar extends Component{
                         <Menu onClick={this.handleMenuClick} style={{ width: 256 }} selectedKeys={[this.state.currentLHS]} mode="inline">
                             <Menu.Item key="sub1"><Link to="/home">Home</Link></Menu.Item>
                             <SubMenu key="sub2" title="Plant Based Dairy">
-                                <Menu.Item key="1">Cheese</Menu.Item>
-                                <Menu.Item key="2">Milk</Menu.Item>
-                                <Menu.Item key="3">Butter</Menu.Item>
-                                <Menu.Item key="4">Tofu</Menu.Item>
+                                <Menu.Item key="plant-based-cheese"><Link to="/products/plant-based-cheese">Cheese</Link></Menu.Item>
+                                <Menu.Item key="plant-based-milk"><Link to="/products/plant-based-milk">Milk</Link></Menu.Item>
+                                <Menu.Item key="plant-based-buter"><Link to="/products/plant-based-butter">Butter</Link></Menu.Item>
+                                <Menu.Item key="plant-based-tofu"><Link to="/products/plant-based-tofu">Tofu</Link></Menu.Item>
                             </SubMenu>
                             <SubMenu key="sub3" title="Plant Based Meat">
                                 <Menu.Item key="5">Frozen</Menu.Item>
@@ -120,10 +136,9 @@ class Navbar extends Component{
                                 <Menu.Item key="36">Butter</Menu.Item>
                                 <Menu.Item key="37">Sugar</Menu.Item>
                             </SubMenu>
-                            <Menu.Item key="sub9">About</Menu.Item>
-                            <Menu.Item key="sub10">Help</Menu.Item>
-                            <Menu.Item key="sub11">About</Menu.Item>
-                            <Menu.Item key="sub12">Legal</Menu.Item>
+                            <Menu.Item key="sub9"><Link to="/help">Help</Link></Menu.Item>
+                            <Menu.Item key="sub10"><Link to="/about">About</Link></Menu.Item>
+                            <Menu.Item key="sub11"><Link to="/legal">Legal</Link></Menu.Item>
                         </Menu>
                     </div>
                 </Drawer>

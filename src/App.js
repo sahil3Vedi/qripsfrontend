@@ -21,7 +21,7 @@ class App extends Component{
                     <Route path="/category" exact render={(props) => <Customer {...props} view="category"/>}/>
                     <Route path="/legal" exact render={(props) => <Customer {...props} view="legal"/>}/>
                     <Route path="/login" exact render={(props) => <Customer {...props} view="login"/>}/>
-                    <Route path="/product" exact render={(props) => <Customer {...props} view="product"/>}/>
+                    <Route path="/products" render={(props) => <Customer {...props} view="products"/>}/>
                     <Route path="/register" exact render={(props) => <Customer {...props} view="register"/>}/>
                     <Route path="/checkout" exact render={(props) => <Checkout {...props}/>}/>
                     <Route path="/" render={(props) => <NotFound {...props}/>}/>

@@ -27,8 +27,8 @@ class Customer extends Component{
             case("login"):
                 customer_view = <Login/>
                 break
-            case("product"):
-                customer_view = <Product/>
+            case("products"):
+                customer_view = <Product key={this.props.location.pathname} pathname={this.props.location.pathname}/>
                 break
             case("register"):
                 customer_view = <Register/>
@@ -57,7 +57,7 @@ class Customer extends Component{
         }
         return (
             <div>
-                <Navbar/>
+                <Navbar pathname={this.props.location.pathname}/>
                 {customer_view}
             </div>
         )
