@@ -22,7 +22,7 @@ class Item extends Component{
                     <div className="pricing-qty">
                         <div><p className="item-subtitle">&#8377;{data.shop_price}/-</p></div>
                         <div></div>
-                        <div><p className="item-subtitle">300g</p></div>
+                        <div><p className="item-subtitle">{data.supplier_unit_quantity}{data.supplier_unit_quantity_type}</p></div>
                     </div>
                     <div className="div-add-to-cart">
                         <Button className="btn-add-to-cart">Add to Cart</Button>

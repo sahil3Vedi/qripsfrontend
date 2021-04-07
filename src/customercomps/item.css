@@ -34,7 +34,7 @@
 }
 
 .pricing-qty{
-    margin-top: 5px;
+    margin-top: 15px;
     display: grid;
     grid-template-columns: 1fr auto auto;
 }
@@ -53,6 +53,7 @@
 .item-title{
     font-size: 20px;
     margin: 0;
+    line-height: 20px;
 }
 
 .item-grid{
@@ -64,7 +65,7 @@
 }
 
 .btn-add-to-cart{
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: rgba(0,0,0,0.4)!important;
     color: white!important;
     border-radius: 15px!important;
