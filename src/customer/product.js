@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Spinner from '../customercomps/spinner'
 import Item from '../customercomps/item'
+import '../customercomps/item.css'
 import axios from 'axios'
 
 class Product extends Component{
@@ -34,7 +35,7 @@ class Product extends Component{
                     this.state.loading ?
                     <Spinner tip="Loading..."/>
                     :
-                    <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",columnGap:"10px",margin:"10px 20px"}}>
+                    <div className="item-grid">
                         {items}
                     </div>
                 }

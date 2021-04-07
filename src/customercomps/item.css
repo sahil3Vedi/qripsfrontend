@@ -1,0 +1,52 @@
+.product-image-container{
+    position: relative;
+}
+
+.product-image{
+    z-index: 5;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.div-product-image{
+    z-index: 3;
+    display: grid;
+    position: absolute;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 120px;
+}
+
+.div-product-image-overlay{
+    display: grid;
+    height: 120px;
+}
+
+.div-product-image-bg{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.product{
+    padding: 15px 10px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+.pricing-qty{
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+.div-add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    margin: 10px 20px;
+}
