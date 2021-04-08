@@ -64,7 +64,7 @@ class Navbar extends Component{
     render(){
         return (
             <div>
-                <div className="navbar-top">
+                <div className={this.props.navTop ? "navbar-top navTop" : "navbar-top"}>
                     <div><MenuOutlined style={{fontSize:"25px"}} onClick={this.toggleLHS}/></div>
                     <div><img className="navbar-logo" src={require('../assets/images/qripslogo.png').default} alt='' /></div>
                     <div><ShoppingOutlined onClick={this.toggleRHS}/></div>

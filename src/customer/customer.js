@@ -15,6 +15,30 @@ import NotFound from './notFound'
 import Navbar from '../customercomps/navbar'
 
 class Customer extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            navTop: true
+        }
+    }
+    componentDidMount() {
+        window.onscroll = () => {
+            if(window.pageYOffset === 0) {
+                this.setNavTop(true)
+            } else {
+                this.setNavTop(false)
+            }
+        };
+    }
+
+    componentWillUnmount() {
+        window.onscroll = null;
+    }
+
+    setNavTop = (value) => {
+        this.setState({navTop: value})
+    }
+
     render(){
         let customer_view = <Home/>
         switch (this.props.view){
@@ -28,7 +52,7 @@ class Customer extends Component{
                 customer_view = <Login/>
                 break
             case("products"):
-                customer_view = <Product key={this.props.location.pathname} pathname={this.props.location.pathname}/>
+                customer_view = <Product key={this.props.location.pathname} pathname={this.props.location.pathname} setNavTop={this.setNavTop}/>
                 break
             case("register"):
                 customer_view = <Register/>
@@ -57,8 +81,10 @@ class Customer extends Component{
         }
         return (
             <div>
-                <Navbar pathname={this.props.location.pathname}/>
-                {customer_view}
+                <Navbar pathname={this.props.location.pathname} navTop={this.state.navTop}/>
+                <div className="customer-view">
+                    {customer_view}
+                </div>
             </div>
         )
     }

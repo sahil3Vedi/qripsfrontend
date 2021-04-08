@@ -17,7 +17,6 @@ class Product extends Component{
 
     componentDidMount(){
         console.log(this.state.pathname.split('/')[2])
-        let params = {params:{"category": "cheese"}}
         axios.get(`${process.env.REACT_APP_BACKEND}/products/fetch/${this.state.pathname.split('/')[2]}`)
         .then(res=>{
             this.setState({

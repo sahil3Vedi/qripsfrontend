@@ -1,5 +1,10 @@
 @import url('http://fonts.cdnfonts.com/css/bahnschrift');
 
+
+.customer-view{
+    margin-top: 80px;
+}
+
 /* INPUTS */
 
 .ant-input{
