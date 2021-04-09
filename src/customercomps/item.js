@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Button, Tag } from 'antd'
 import { LeftOutlined } from '@ant-design/icons'
-import $ from 'jquery'
 
 class Item extends Component{
     componentDidMount(){
