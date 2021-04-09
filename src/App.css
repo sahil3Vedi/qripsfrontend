@@ -1,4 +1,7 @@
-@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+@font-face {
+font-family: "Bahnschrift";
+src: url("assets/fonts/BAHNSCHRIFT.TTF") format("ttf"),
+}
 
 
 .customer-view{
