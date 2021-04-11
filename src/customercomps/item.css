@@ -7,8 +7,7 @@
 
 .product-image{
     z-index: 5;
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
 }
 
 .div-product-image{
@@ -33,7 +32,7 @@
 /*PRODUCT DETAILS*/
 
 .product{
-    padding: 15px 10px 15px 10px;
+    padding: 0px 10px 15px 10px;
     border-radius: 0px 0px 10px 10px;
     font-family: 'Bahnschrift', sans-serif;
     overflow-y: scroll;
@@ -54,14 +53,14 @@
 .item-subtitle{
     font-size: 17px;
     margin: 0;
-    transition: font-size 0.3s;
+    transition: font-size 0s;
 }
 
 .item-title{
     font-size: 20px;
     margin: 0;
     line-height: 20px;
-    transition: font-size 0.2s;
+    transition: font-size 0s;
 }
 
 .item-grid{
@@ -80,6 +79,7 @@
     color: white!important;
     border-radius: 15px!important;
     border: 0px solid white !important;
+    transition: font-size 0s;
 }
 
 .div-btn-back{
@@ -130,10 +130,12 @@
 
 .expanded .item-title{
     font-size: 30px !important;
+    transition: font-size 0.3s;
 }
 
 .expanded .item-subtitle{
     font-size: 24px !important;
+    transition: font-size 0.2s;
 }
 
 .expanded-info{
@@ -168,4 +170,5 @@
     font-size: 20px;
     padding-top: 2px;
     border-radius: 10px!important;
+    transition: font-size 0.2s;
 }

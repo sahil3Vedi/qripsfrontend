@@ -50,7 +50,7 @@ class Item extends Component{
                                 <div></div>
                                 <div><Tag color="#87d068">In Stock</Tag></div>
                             </div>
-                            <img className="product-image" src={data.supplier_images[0]} onClick={this.popOut} alt="product"/>
+                            <img className="product-image" src={data.shop_images[0]} onClick={this.popOut} alt="product"/>
                         </div>
                     </div>
                     <div style={{backgroundColor:`${data.color}`}} className="product" onScroll={this.handleScroll}>
