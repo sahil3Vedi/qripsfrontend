@@ -53,7 +53,7 @@ class Item extends Component{
                                 <div></div>
                                 <div><Tag color="#008000">In Stock</Tag></div>
                             </div>
-                            <div style={{zIndex:5,display:"block"}}>
+                            <div className="notransition" style={{zIndex:5,display:"block"}}>
                                 <Carousel class="carousel">
                                     {carousel}
                                 </Carousel>
