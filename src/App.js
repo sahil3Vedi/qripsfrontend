@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Customer from './customer/customer'
 import Checkout from './payments/checkout'
 import NotFound from './customer/notFound'
+import Footer from './customercomps/footer'
 import 'antd/dist/antd.css'
 import './App.css'
 require('dotenv/config');
@@ -30,8 +31,11 @@ class App extends Component{
         )
         return (
             <Router>
-                <div>
-                    {routed_display}
+                <div className="app-container">
+                    <div className="main-container">
+                        {routed_display}
+                    </div>
+                    <Footer/>
                 </div>
             </Router>
         )

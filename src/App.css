@@ -3,7 +3,6 @@ font-family: "Bahnschrift";
 src: url("assets/fonts/BAHNSCHRIFT.TTF") format("ttf"),
 }
 
-
 .customer-view{
     margin-top: 80px;
 }
@@ -111,4 +110,25 @@ src: url("assets/fonts/BAHNSCHRIFT.TTF") format("ttf"),
 
 .ant-spin-text{
     color: green;
+}
+
+/* FOOTER */
+
+.app-container{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+.footer{
+    background-color: #2f2f2f;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer p{
+    margin-bottom: 0;
 }

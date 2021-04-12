@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { Button, BackTop } from 'antd'
+import { FilterOutlined } from '@ant-design/icons'
 import Spinner from '../customercomps/spinner'
 import Item from '../customercomps/item'
 import '../customercomps/item.css'
@@ -44,13 +46,24 @@ class Product extends Component{
         let items = this.state.products.map(p=><Item data={p} key={p.supplier_name}/>)
         return (
             <div>
-                <div className="product-category-title"><p>{this.state.heading}</p></div>
+                {
+                    this.state.loading ?
+                    null
+                    :
+                    <div className="product-category-title">
+                        <p>{this.state.heading}</p>
+                        <Button className="btn-filter" icon={<FilterOutlined />}>Filter</Button>
+                    </div>
+                }
                 {
                     this.state.loading ?
                     <Spinner tip="Loading..."/>
                     :
-                    <div className="item-grid">
-                        {items}
+                    <div>
+                        <BackTop />
+                        <div className="item-grid">
+                            {items}
+                        </div>
                     </div>
                 }
             </div>
