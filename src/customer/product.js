@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Button, BackTop } from 'antd'
+import { Button, BackTop, Modal, Checkbox, Slider } from 'antd'
 import { FilterOutlined } from '@ant-design/icons'
 import Spinner from '../customercomps/spinner'
 import Item from '../customercomps/item'
@@ -26,6 +26,7 @@ class Product extends Component{
             pathname : props.pathname,
             loading: true,
             products: [],
+            filterVisible: false
         }
     }
 
@@ -42,7 +43,26 @@ class Product extends Component{
         })
     }
 
+    toggleFilterVisible = () => {
+        this.setState(prevState=>({
+            filterVisible: !prevState.filterVisible
+        }))
+    }
+
     render(){
+        let filter_modal = <Modal centered header={null} closable={false} visible={this.state.filterVisible} onOk={()=>{console.log("filtering..")}} onCancel={this.toggleFilterVisible} okText="Apply Filter">
+            <p className="filter-category">Product Type</p>
+            <Checkbox>Blocks</Checkbox><br/>
+            <Checkbox>Shredded</Checkbox><br/>
+            <Checkbox>Slices</Checkbox><br/>
+            <Checkbox>Dips</Checkbox><br/>
+            <p className="filter-category">Company</p>
+            <Checkbox>Katharos</Checkbox><br/>
+            <Checkbox>Soft Spot</Checkbox><br/>
+            <Checkbox>Follow Your Heart</Checkbox><br/>
+            <p className="filter-category">Price Range</p>
+            <Slider range step={100} defaultValue={[100, 1500]} min={100} max={1500}/>
+        </Modal>
         let items = this.state.products.map(p=><Item data={p} key={p.supplier_name}/>)
         return (
             <div>
@@ -51,8 +71,9 @@ class Product extends Component{
                     null
                     :
                     <div className="product-category-title">
+                        {filter_modal}
                         <p>{this.state.heading}</p>
-                        <Button className="btn-filter" icon={<FilterOutlined />}>Filter</Button>
+                        <Button className="btn-filter" icon={<FilterOutlined />} onClick={this.toggleFilterVisible}>Filter</Button>
                     </div>
                 }
                 {

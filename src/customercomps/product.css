@@ -11,7 +11,7 @@
 }
 
 .ant-back-top{
-    z-index: 6;
+    z-index: 6!important;
 }
 
 .ant-back-top-content{
@@ -24,4 +24,11 @@
     color: white!important;
     border-radius: 20px!important;
     border: none !important;
+}
+
+.filter-category{
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 0px;
+    margin-top: 20px;
 }
