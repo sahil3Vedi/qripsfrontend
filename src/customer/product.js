@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import { Button, BackTop, Modal, Checkbox, Slider, message, Row, Col } from 'antd'
+import { Button, BackTop, Modal, Checkbox, Slider, message, Row, Col, Empty } from 'antd'
 import { FilterOutlined, CloseCircleOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom'
 import Spinner from '../customercomps/spinner'
 import Item from '../customercomps/item'
 import '../customercomps/item.css'
@@ -165,9 +166,23 @@ class Product extends Component{
                     :
                     <div>
                         <BackTop />
-                        <div className="item-grid">
-                            {items}
-                        </div>
+                        {
+                            this.state.filteredProducts.length ?
+                            <div className="item-grid">
+                                {items}
+                            </div>
+                            :
+                            (
+                                this.state.products.length ?
+                                <div className="no-products-found">
+                                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<p>No Products Found</p>}/>
+                                </div>
+                                :
+                                <div className="no-products-found">
+                                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<p>No Products Found.<br/><Link to="/home"><span style={{color:"green"}}>Back to Homepage</span></Link></p>}/>
+                                </div>
+                            )
+                        }
                     </div>
                 }
             </div>

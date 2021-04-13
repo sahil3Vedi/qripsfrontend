@@ -35,8 +35,14 @@ src: url("assets/fonts/BAHNSCHRIFT.TTF") format("ttf"),
     border-color: green!important;
 }
 
+
+
 .ant-slider-track{
     background-color: green!important;
+}
+
+.ant-select{
+    width: 100% !important;
 }
 
 /* BUTTONS */
