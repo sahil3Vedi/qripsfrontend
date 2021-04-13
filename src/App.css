@@ -26,10 +26,28 @@ src: url("assets/fonts/BAHNSCHRIFT.TTF") format("ttf"),
     border-radius: 10px;
 }
 
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: green !important;
+  border-color: green !important;
+}
+
+.ant-slider-handle{
+    border-color: green!important;
+}
+
+.ant-slider-track{
+    background-color: green!important;
+}
+
 /* BUTTONS */
 
 .ant-btn{
     border-radius: 5px;
+}
+
+.ant-btn-primary{
+    background-color: green !important;
+    border: none;
 }
 
 

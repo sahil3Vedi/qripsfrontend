@@ -18,7 +18,12 @@ function inferCategory(pathname){
     for (var w in capitalised){
         retstr += (capitalised[w] + " ")
     }
-    return retstr
+    let spacedout = retstr.split(" ").map(d=>d.charAt(0).toUpperCase() + d.slice(1))
+    let finalret = ""
+    for (var v in spacedout){
+        finalret += (spacedout[v] + " ")
+    }
+    return finalret
 }
 
 function fetchCategories(pathname){
@@ -143,7 +148,7 @@ class Product extends Component{
                         {filter_modal}
                         <p>{this.state.heading}</p>
                         {
-                            this.state.products.length ?
+                            this.state.products.length>1 ?
                             <div className="div-btn-filter">
                                 <div><Button className="btn-filter" icon={<FilterOutlined />} onClick={this.toggleFilterVisible}>Filter</Button></div>
                                 <div></div>
