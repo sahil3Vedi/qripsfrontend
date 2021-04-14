@@ -17,10 +17,12 @@ import Navbar from '../customercomps/navbar'
 class Customer extends Component{
     constructor(props){
         super(props)
+        this.child = React.createRef()
         this.state = {
             navTop: true
         }
     }
+
     componentDidMount() {
         window.onscroll = () => {
             if(window.pageYOffset === 0) {
@@ -35,6 +37,10 @@ class Customer extends Component{
         window.onscroll = null;
     }
 
+    toggleLHS = () => {
+        this.child.current.toggleLHS()
+    }
+
     setNavTop = (value) => {
         this.setState({navTop: value})
     }
@@ -43,7 +49,7 @@ class Customer extends Component{
         let customer_view = <Home/>
         switch (this.props.view){
             case("home"):
-                customer_view = <Home/>
+                customer_view = <Home toggleLHS={this.toggleLHS}/>
                 break
             case("legal"):
                 customer_view = <Legal/>
@@ -76,12 +82,12 @@ class Customer extends Component{
                 customer_view = <NotFound/>
                 break
             default:
-                customer_view = <Home/>
+                customer_view = <Home toggleLHS={this.toggleLHS}/>
                 break
         }
         return (
             <div>
-                <Navbar pathname={this.props.location.pathname} navTop={this.state.navTop}/>
+                <Navbar pathname={this.props.location.pathname} navTop={this.state.navTop} ref={this.child}/>
                 <div className="customer-view">
                     {customer_view}
                 </div>

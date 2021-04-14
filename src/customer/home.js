@@ -1,6 +1,11 @@
 import React, {Component} from 'react'
 import { Select } from 'antd'
+import axios from 'axios'
+import Item from '../customercomps/item'
+import Spinner from '../customercomps/spinner'
 import '../customercomps/home.css'
+import '../customercomps/item.css'
+import '../customercomps/product.css'
 
 const { Option } = Select
 
@@ -15,11 +20,29 @@ const home_categories = [
     {color:"#FFEDBB",name:"Cosmetics",link:"plant-based-cheese",svgurl:'https://www.svgrepo.com/show/299829/cosmetics-ointment.svg'},
     {color:"#FFEDBB",name:"Tofu",link:"plant-based-cheese",svgurl:'https://www.svgrepo.com/show/85280/tofu.svg'},
     {color:"#E8FFC6",name:"Dry Fruits",link:"plant-based-cheese",svgurl:'https://www.svgrepo.com/show/196387/hazelnuts-almond.svg'},
-    {color:"#D2E7FF",name:"Butter",link:"plant-based-cheese",svgurl:'https://www.svgrepo.com/show/276537/butter-butter.svg'},
     {color:"#FFEDBB",name:"Biscuits",link:"plant-based-cheese",svgurl:'https://www.svgrepo.com/show/186236/cookie.svg'},
+    {color:"#D2E7FF",name:"Butter",link:"plant-based-cheese",svgurl:'https://www.svgrepo.com/show/276537/butter-butter.svg'}
 ]
 
 class Home extends Component{
+
+    constructor(props){
+        super(props)
+        this.state={
+            featuredProducts: [],
+            featureLoading: true
+        }
+    }
+
+    componentDidMount() {
+        axios.get(`${process.env.REACT_APP_BACKEND}/products/fetch/featured`)
+        .then(res=>{
+            this.setState({
+                featuredProducts: res.data,
+                featureLoading: false
+            })
+        })
+    }
 
     getCategoryDiv = (d) => {
         let svgurl = d.svgurl
@@ -34,6 +57,7 @@ class Home extends Component{
     }
 
     render(){
+        let featured_items = this.state.featuredProducts.map(p=><Item data={p} key={p.supplier_name}/>)
         return (
             <div>
                 <div className="home-search">
@@ -46,11 +70,36 @@ class Home extends Component{
                         <Option value="6">Cancelled</Option>
                     </Select>
                 </div>
-                <div className="home-title"><p>100% Vegan.</p></div>
+                <div className="home-title"><p>100% Vegan</p></div>
                 <div className="home-categories">{home_categories.map(d=>
                         this.getCategoryDiv(d)
                     )}
                 </div>
+                <div className="home-link"><p onClick={this.props.toggleLHS}>Explore More Categories</p></div>
+                <div className="home-title"><p>Offers</p></div>
+                <div className="offers">
+                    <div className="offer" style={{backgroundColor:"rgb(27,83,150)",boxShadow:"3px 3px 10px #00000030"}}>
+                        <div className="offer-image">
+                            <img src="https://www.svgrepo.com/show/195015/house-home.svg" alt="home-delivery"/>
+                        </div>
+                        <div className="offer-text">
+                            <p>Free Home Delivery on orders above ₹999/-</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="home-title"><p>Featured Products</p></div>
+                {
+                    this.state.featureLoading
+                    ?
+                    <Spinner tip="Loading..."/>
+                    :
+                    <div>
+                        <div className="item-grid">
+                            {featured_items}
+                        </div>
+                    </div>
+                }
+                <div className="home-link"><p onClick={this.props.toggleLHS}>Explore More Products</p></div>
             </div>
         )
     }
