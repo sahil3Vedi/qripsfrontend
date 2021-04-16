@@ -78,7 +78,7 @@ class Home extends Component{
                 <div className="home-link"><p onClick={this.props.toggleLHS}>Explore More Categories</p></div>
                 <div className="home-title"><p>Offers</p></div>
                 <div className="offers">
-                    <div className="offer" style={{backgroundColor:"rgb(27,83,150)",boxShadow:"3px 3px 10px #00000030"}}>
+                    <div className="offer" style={{backgroundColor:"rgb(0,127,0)",boxShadow:"3px 3px 10px #00000030"}}>
                         <div className="offer-image">
                             <img src="https://www.svgrepo.com/show/195015/house-home.svg" alt="home-delivery"/>
                         </div>
