@@ -84,7 +84,8 @@
 
 .item-subtitle{
     font-size: 17px;
-    margin: 0;
+    line-height: 17px;
+    margin-bottom: 5px;
     transition: font-size 0s;
 }
 
@@ -168,11 +169,13 @@
 
 .expanded .item-title{
     font-size: 30px !important;
+    line-height: 30px;
     transition: font-size 0.3s;
 }
 
 .expanded .item-subtitle{
     font-size: 24px !important;
+    line-height: 24px;
     transition: font-size 0.2s;
 }
 
